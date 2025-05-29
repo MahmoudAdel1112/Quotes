@@ -1,0 +1,123 @@
+.parent {
+  background-image: url("../assets/bright-pop-landscape-design.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+  color: #000;
+  position: relative;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.parent::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.quote-container {
+  max-width: 80%;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: #fff;
+}
+
+.mybtn {
+  z-index: 2;
+}
+
+h1 {
+  color: #fff;
+}
+
+.offcanvas-custom {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.setting-btn {
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+  border: none;
+  outline: none;
+  background-color: transparent;
+}
+
+.bg-btn {
+  width: 50px;
+  height: 30px;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.btns-parent {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+.a0-bg {
+  background-image: url("../assets/bright-pop-landscape-design.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: scroll;
+}
+
+.a1-bg {
+  background-image: url("../assets/cartoon-style-summer-scene-with-window-view.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: scroll;
+}
+
+.a2-bg {
+  background-image: url("../assets/digital-art-isolated-house.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: scroll;
+}
+
+.a3-bg {
+  background-image: url("../assets/purple-mountain-landscape.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: scroll;
+}
+
+.pomodoro-parent {
+  z-index: 2;
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  color: #fff;
+  width: 400px;
+  height: 250px;
+  border-radius: 15px;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/*# sourceMappingURL=main.css.map */

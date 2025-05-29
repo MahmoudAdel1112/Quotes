@@ -1,0 +1,155 @@
+// Mixins
+
+// Mixin for centering content with flexbox
+@mixin flex-center($direction: row) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: $direction;
+}
+
+// Mixin for absolute positioning
+@mixin absolute-position($top: null, $right: null, $bottom: null, $left: null) {
+  position: absolute;
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
+}
+
+// Mixin for background image properties
+@mixin background-image-props(
+  $url,
+  $size: cover,
+  $repeat: no-repeat,
+  $position: center center,
+  $attachment: scroll
+) {
+  background-image: url($url);
+  background-size: $size;
+  background-repeat: $repeat;
+  background-position: $position;
+  background-attachment: $attachment;
+}
+
+// Mixin for basic button styling
+@mixin button-base($border: none, $outline: none, $background: transparent) {
+  border: $border;
+  outline: $outline;
+  background-color: $background;
+}
+
+// Variables (optional, but good practice for common values)
+$color-white: #fff;
+$color-black: #000;
+$overlay-color: rgba(0, 0, 0, 0.5);
+$offcanvas-bg: rgba(0, 0, 0, 0.7);
+$pomodoro-bg: rgba(0, 0, 0, 0.8);
+$border-radius-medium: 15px;
+
+// Styles
+
+.parent {
+  @include background-image-props(
+    "../assets/bright-pop-landscape-design.jpg",
+    cover,
+    no-repeat,
+    center center,
+    fixed
+  );
+  color: $color-black;
+  position: relative;
+  height: 100vh;
+  @include flex-center(column); // Using flex-center mixin
+
+  &::after {
+    content: "";
+    @include absolute-position(
+      0,
+      0,
+      null,
+      null
+    ); // Using absolute-position mixin
+    width: 100%;
+    height: 100%;
+    background-color: $overlay-color;
+  }
+}
+
+.quote-container {
+  max-width: 80%;
+  z-index: 2;
+  @include flex-center(column); // Using flex-center mixin
+  color: $color-white;
+}
+
+.mybtn {
+  z-index: 2;
+}
+
+h1 {
+  color: $color-white;
+}
+
+.offcanvas-custom {
+  background-color: $offcanvas-bg;
+}
+
+.setting-btn {
+  @include absolute-position(
+    null,
+    20px,
+    20px,
+    null
+  ); // Using absolute-position mixin
+  @include button-base; // Using button-base mixin
+}
+
+.bg-btn {
+  width: 50px;
+  height: 30px;
+  @include button-base; // Using button-base mixin
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.btns-parent {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+// Applying background images using the mixin
+.a0-bg {
+  @include background-image-props("../assets/bright-pop-landscape-design.jpg");
+}
+.a1-bg {
+  @include background-image-props(
+    "../assets/cartoon-style-summer-scene-with-window-view.jpg"
+  );
+}
+.a2-bg {
+  @include background-image-props("../assets/digital-art-isolated-house.jpg");
+}
+.a3-bg {
+  @include background-image-props("../assets/purple-mountain-landscape.jpg");
+}
+
+.pomodoro-parent {
+  z-index: 2;
+  @include absolute-position(
+    null,
+    null,
+    20px,
+    20px
+  ); // Using absolute-position mixin
+  color: $color-white;
+  width: 400px;
+  height: 250px;
+  border-radius: $border-radius-medium;
+  background-color: $pomodoro-bg;
+  @include flex-center(column); // Using flex-center mixin
+  gap: 10px;
+}

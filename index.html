@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <link
+      rel="stylesheet"
+      href="./puplic/styles/bootstrap/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="./puplic/styles/scss/main.css" />
+  </head>
+  <body>
+    <div class="parent" id="parent">
+      <div class="container"></div>
+      <div class="quote-container text-center">
+        <h2 id="quote"></h2>
+        <h5 id="author"></h5>
+      </div>
+      <div class="mybtn pb-5">
+        <button class="btn btn-primary" onclick="displayQuote()">
+          New Quote
+        </button>
+        <span class="d-none pb-3">a</span>
+      </div>
+      <div class="pomodoro-parent" id="pomodoro-parent">
+        <ul
+          class="nav nav-pills justify-content-center mb-4"
+          id="pomodoroTabs"
+          role="tablist"
+        >
+          <li class="nav-item" role="presentation">
+            <a
+              class="nav-link active"
+              id="work-tab"
+              data-bs-toggle="pill"
+              href="#"
+              role="tab"
+              aria-selected="true"
+              >Work</a
+            >
+          </li>
+          <li class="nav-item" role="presentation">
+            <a
+              class="nav-link"
+              id="short-break-tab"
+              data-bs-toggle="pill"
+              href="#"
+              role="tab"
+              aria-selected="false"
+              >Short Break</a
+            >
+          </li>
+          <li class="nav-item" role="presentation">
+            <a
+              class="nav-link"
+              id="long-break-tab"
+              data-bs-toggle="pill"
+              href="#"
+              role="tab"
+              aria-selected="false"
+              >Long Break</a
+            >
+          </li>
+        </ul>
+
+        <div class="pomodoro-info" id="pomodoro-info">
+          <h4 id="current-phase">Timer</h4>
+        </div>
+        <div class="">
+          <h1 id="pomodoro-timer">25:00</h1>
+        </div>
+        <div class="pomodoro-controls d-flex justify-content-center gap-3">
+          <div class="pomodoro-btn-start" id="start-btn">
+            <button class="btn btn-outline-primary">Start</button>
+          </div>
+          <div class="pomodoro-btn-stop" id="stop-btn">
+            <button class="btn btn-outline-primary">Stop</button>
+          </div>
+          <div class="pomodoro-btn-reset" id="reset-btn">
+            <button class="btn btn-outline-primary">Reset</button>
+          </div>
+        </div>
+      </div>
+
+      <div style="z-index: 2" data-bs-theme="dark">
+        <button
+          class="setting-btn text-white"
+          type="button"
+          data-bs-toggle="offcanvas"
+          data-bs-target="#offcanvasExample"
+          aria-controls="offcanvasExample"
+        >
+          <i class="fa-regular fa-gear" style="font-size: 22px">
+            <span class="d-none"></span>
+          </i>
+        </button>
+
+        <div
+          class="offcanvas offcanvas-end offcanvas-custom"
+          tabindex="-1"
+          id="offcanvasExample"
+          aria-labelledby="offcanvasExampleLabel"
+        >
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasExampleLabel">Settings</h5>
+            <button
+              type="button"
+              class="btn-close text-reset"
+              data-bs-dismiss="offcanvas"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="offcanvas-body">
+            <div>
+              <h6>Wallpaper</h6>
+              <hr />
+              <div class="btns-parent"></div>
+              <hr />
+              <div class="upload-container input-group">
+                <input
+                  type="file"
+                  name="file"
+                  id="file-input"
+                  accept="image/*"
+                  class="form-control"
+                />
+                <label for="file-input" class="input-group-text"
+                  >Choose a backgound image</label
+                >
+              </div>
+              <hr />
+              <div class="">
+                <button
+                  onClick="changePomodoroDisplay()"
+                  class="pomodoro-btn btn btn-outline-primary"
+                  id="pomodoro-btn"
+                >
+                  Display a Pomodoro Timer
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="./js/bootstrap js/bootstrap.bundle.min.js"></script>
+
+    <script src="./js/index.js"></script>
+  </body>
+</html>
+
+<script
+  src="https://kit.fontawesome.com/36a61fd6a0.js"
+  crossorigin="anonymous"
+  defer
+></script>
